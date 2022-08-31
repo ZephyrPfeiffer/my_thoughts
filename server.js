@@ -1,3 +1,5 @@
+// create base layout for my thoughts page
+
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -43,4 +45,4 @@ app.use('/todos', todoRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
-})    
+})

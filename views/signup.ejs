@@ -5,19 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+  <% if (locals.messages.errors) { %>
+    <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+    <% }) %>    
+  <% } %>
+  <main class="container">
+    <h1 class="container-heading">Sign Up</h1>
+    <form class="form-container" action="/signup" method="POST">
+      <label class="input-label">
+        User Name
+        <input class="input" type="text" name="userName" placeholder="User Name">
+      </label>
+      <label class="input-label">
+        Email
+        <input class="input" type="email" name="email" placeholder="Email">
+      </label>
+      <label class="input-label">
+        Password
+        <input class="input" type="password" name="password" placeholder="Password">
+      </label>
+      <label class="input-label">
+        Confirm password
+        <input class="input" type="password" name="confirmPassword" placeholder="Confirm Password">
+      </label>
+      <input type="submit">
     </form>
+  </main>
 </body>
 </html>

@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
+  <% if (locals.messages.errors) { %>
+      <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+      <% }) %>    
+  <% } %>
+  <% if (locals.messages.info) { %>
+      <% messages.info.forEach( el => { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+      <% }) %>    
+  <% } %>
+  <main class="container">
+    <h1 class="container-heading">Login</h1>
+    <form class="form-container" action="/login" method="POST">
+      <label class="input-label">
+        Email
+        <input class="input" type="email" name="email" placeholder="Email">
+      </label>
+      <label class="input-label">
+        Password
+        <input class="input" type="password" name="password" placeholder="Password">
+      </label>
         <input type="submit">
     </form>
+  </main>
 </body>
 </html>
