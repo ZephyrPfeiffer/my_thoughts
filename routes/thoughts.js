@@ -3,7 +3,7 @@ const router = express.Router()
 const thoughtController = require('../controllers/thoughts') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', ensureAuth, thoughtController.getThoughts)
+router.get('/:id', ensureAuth, thoughtController.getThought)
 
 router.post('/createThought', ensureAuth, thoughtController.createThought)
 

@@ -1,8 +1,7 @@
 const Thought = require('../models/Thought')
 
 module.exports = {
-    getThoughts: async (req,res)=>{
-        console.log(req.user)
+    getThought: async (req,res)=>{
         try{
             const thoughts = await Thought.find({userId:req.user.id})
             res.render('thoughts.ejs', {thoughts, user: req.user})
