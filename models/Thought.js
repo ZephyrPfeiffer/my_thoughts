@@ -1,19 +1,23 @@
 const mongoose = require('mongoose')
 
 const ThoughtSchema = new mongoose.Schema({
-  userName: {
+  topic: {
     type: String,
     required: true,
   },
-  subject: {
+  bodyText: {
     type: String,
     required: true,
   },
-  thoughtText: {
-    type: String,
+  dateCreated: {
+    type: Date,
     required: true,
   },
-  userId: {
+  tagList: {
+    type: [String],
+    required: false,
+  },
+  createdBy: {
     type: String,
     required: true
   }

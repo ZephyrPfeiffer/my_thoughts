@@ -1,4 +1,5 @@
-// create base layout for mythoughts pages
+// set up models
+// set up page layouts
 
 const express = require('express')
 const app = express()
