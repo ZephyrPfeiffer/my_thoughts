@@ -3,17 +3,17 @@ const Thought = require('../models/Thought')
 module.exports = {
     getThought: async (req,res)=>{
         try{
-            const thoughts = await Thought.find({userId:req.user.id})
-            res.render('thoughts.ejs', {thoughts, user: req.user})
+            const thoughts = await Thought.findById(req.params.id)
+            res.render('thought.ejs', {thoughts, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
     createThought: async (req, res)=>{
         try{
-            await Thought.create({userName: req.user.userName, subject: req.body.subject, thoughtText: req.body.thoughtText, userId: req.user.id})
+            await Thought.create({topic: req.body.topic, bodyText: req.body.bodyText, dateCreated: date.now(), tagList: req.body.tagList, createdBy: req.user.id})
             console.log('Thought has been added!')
-            res.redirect('/thoughts')
+            res.redirect('/mythoughts')
         }catch(err){
             console.log(err)
         }
