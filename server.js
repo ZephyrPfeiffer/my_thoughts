@@ -1,5 +1,4 @@
-// set up models
-// set up page layouts
+// set up base page layouts
 
 const express = require('express')
 const app = express()
