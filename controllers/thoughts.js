@@ -9,9 +9,17 @@ module.exports = {
             console.log(err)
         }
     },
-    createThought: async (req, res)=>{
+    createThought: async (req,res)=>{
         try{
-            await Thought.create({topic: req.body.topic, bodyText: req.body.bodyText, dateCreated: date.now(), tagList: req.body.tagList, createdBy: req.user.id})
+            res.render('individualthought.ejs')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    addThought: async (req, res)=>{
+        try{
+            console.log(req.body)
+            await Thought.create({topic: req.body.topic, bodyText: req.body.bodyText, dateCreated: Date.now(), tagList: req.body.tagList, createdBy: req.user.id})
             console.log('Thought has been added!')
             res.redirect('/mythoughts')
         }catch(err){

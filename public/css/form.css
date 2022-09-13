@@ -4,7 +4,7 @@
 
 .form-container {
 
-  width: 90%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -19,13 +19,11 @@
 .input-label {
 
   width: 100%;
-  margin-top: 2rem;
+  margin: 2rem 0;
 
 }
 
-.input-label:last-of-type,
-.form-container:last-child {
-
+textarea {
   margin-bottom: 2rem;
-
+  height: 300px;
 }

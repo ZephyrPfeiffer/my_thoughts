@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MyThoughts</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>MyThoughts</h1>
+    <header>
+        <h1>MyThoughts</h1>
+        <a href="/logout">Logout</a>
+    </header>
     <main>
-      <% thoughts.forEach( el => { %>
-        <section>
-          <span>Date Created: <%= el.dateCreated %></span>
-          <h3>Topic: <%= el.topic %></h3> 
-        </section>
-      <% }) %>
+        <!-- <% thoughts.forEach( el => { %>
+            <section>
+                <span>Date Created: <%= el.dateCreated %></span>
+                <h3>Topic: <%= el.topic %></h3>
+            </section>
+        <% }) %> -->
     </main>
 
-    <a href="/logout">Logout</a>
+    <a href="/thought/createThought">Create</a>
 
     <script src="js/main.js"></script>
 </body>
