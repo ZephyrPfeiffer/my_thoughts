@@ -1,6 +1,18 @@
-// const deleteBtn = document.querySelectorAll('.del')
-// const todoItem = document.querySelectorAll('span.not')
-// const todoComplete = document.querySelectorAll('span.completed')
+const addTagButton = document.querySelector('#addButton')
+const tagList = document.querySelector('#tagList')
+
+addTagButton.addEventListener('click', addTagInput)
+
+// adds a new tag input to the tag list in form
+function addTagInput() {
+
+  // creates new list item and input
+  const tagItem = document.createElement('li')
+  const input = document.createElement('input')
+  tagItem.className = 'tag-item';
+
+}
+
 
 // Array.from(deleteBtn).forEach((el)=>{
 //     el.addEventListener('click', deleteTodo)

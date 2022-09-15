@@ -1,4 +1,5 @@
 // set up base page layouts
+// give ability to add tags to a post when creating one
 
 const express = require('express')
 const app = express()

@@ -18,8 +18,8 @@ const ThoughtSchema = new mongoose.Schema({
     required: false,
   },
   createdBy: {
-    type: String,
-    required: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   }
 })
 
