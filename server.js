@@ -1,4 +1,5 @@
 // set up base page layouts
+// add ability to provide an image to a thought
 // give ability to add tags to a post when creating one
 
 const express = require('express')
