@@ -18,7 +18,7 @@ const ThoughtSchema = new mongoose.Schema({
     required: true,
   },
   dateCreated: {
-    type: Date,
+    type: String,
     required: true,
   },
   tagList: {

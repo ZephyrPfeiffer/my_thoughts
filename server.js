@@ -1,6 +1,5 @@
 // set up base page layouts
-// add ability to provide an image to a thought
-// give ability to add tags to a post when creating one
+// give ability to add tags to a post when creating one (later)
 
 const express = require('express')
 const app = express()
@@ -8,7 +7,7 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
-const methodOverride = require("method-override");
+const methodOverride = require("method-override")
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')

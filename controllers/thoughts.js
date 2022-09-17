@@ -1,11 +1,12 @@
-const cloudinary = require("../middleware/cloudinary");
+const cloudinary = require("../middleware/cloudinary")
 const Thought = require('../models/Thought')
+const dateFormat = require('dateformat')
 
 module.exports = {
     getThought: async (req,res)=>{
         try{
-            const thoughts = await Thought.findById(req.params.id)
-            res.render('thought.ejs', {thoughts, user: req.user})
+            const thought = await Thought.findById(req.params.id)
+            res.render('thought.ejs', {thought: thought, user: req.user})
         }catch(err){
             console.log(err)
         }
@@ -20,16 +21,16 @@ module.exports = {
     addThought: async (req, res)=>{
         try{
             // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+            const result = await cloudinary.uploader.upload(req.file.path)
 
-            console.log(result);
+            const now = new Date()
 
             await Thought.create({
               topic: req.body.topic, 
               bodyText: req.body.bodyText,
               image: result.secure_url,
               cloudinaryId: result.public_id,
-              dateCreated: Date.now(),
+              dateCreated: dateFormat(now, "mmmm, dS, yyyy"),
               tagList: req.body.tagList,
               createdBy: req.user.id,
             })

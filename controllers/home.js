@@ -6,6 +6,6 @@ module.exports = {
     },
     getThoughts: async (req,res)=>{
       const thoughts = await Thought.find({createdBy:req.user.id})
-      res.render('thoughts.ejs', {thoughts, user: req.user})
+      res.render('mythoughts.ejs', {thoughts, user: req.user})
   }
 }
