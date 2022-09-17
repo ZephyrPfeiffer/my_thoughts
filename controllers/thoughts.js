@@ -1,6 +1,5 @@
-const cloudinary = require("../middleware/cloudinary")
+const cloudinary = require("../middleware/cloudinary");
 const Thought = require('../models/Thought')
-const dateFormat = require('dateformat')
 
 module.exports = {
     getThought: async (req,res)=>{
@@ -21,16 +20,16 @@ module.exports = {
     addThought: async (req, res)=>{
         try{
             // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path)
+            const result = await cloudinary.uploader.upload(req.file.path);
 
-            const now = new Date()
+            const today = new Date();
 
             await Thought.create({
               topic: req.body.topic, 
               bodyText: req.body.bodyText,
               image: result.secure_url,
               cloudinaryId: result.public_id,
-              dateCreated: dateFormat(now, "mmmm, dS, yyyy"),
+              dateCreated: today.getDate()  + "-" + (today.getMonth()+1) + "-" + today.getFullYear(),
               tagList: req.body.tagList,
               createdBy: req.user.id,
             })
