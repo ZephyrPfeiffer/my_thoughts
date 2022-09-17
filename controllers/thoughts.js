@@ -27,7 +27,7 @@ module.exports = {
             await Thought.create({
               topic: req.body.topic, 
               bodyText: req.body.bodyText,
-              image: result.secure_URL,
+              image: result.secure_url,
               cloudinaryId: result.public_id,
               dateCreated: Date.now(),
               tagList: req.body.tagList,

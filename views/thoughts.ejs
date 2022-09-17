@@ -13,12 +13,12 @@
         <a href="/logout">Logout</a>
     </header>
     <main>
-        <!-- <% thoughts.forEach( el => { %>
+        <% thoughts.forEach( el => { %>
             <section>
-                <span>Date Created: <%= el.dateCreated %></span>
-                <h3>Topic: <%= el.topic %></h3>
+                <span>Created <%= el.dateCreated %></span>
+                <h3><%= el.topic %></h3>
             </section>
-        <% }) %> -->
+        <% }) %>
     </main>
 
     <a href="/thought/createThought">Create</a>
