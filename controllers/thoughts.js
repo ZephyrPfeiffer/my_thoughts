@@ -22,10 +22,12 @@ module.exports = {
             // Upload image to cloudinary
             const result = await cloudinary.uploader.upload(req.file.path);
 
+            console.log(result);
+
             await Thought.create({
               topic: req.body.topic, 
               bodyText: req.body.bodyText,
-              imageURL: result.secure_URL,
+              image: result.secure_URL,
               cloudinaryId: result.public_id,
               dateCreated: Date.now(),
               tagList: req.body.tagList,
