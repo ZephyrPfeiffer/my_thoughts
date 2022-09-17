@@ -15,11 +15,13 @@
         <a href="/logout">Logout</a>
     </header>
     <main>
-      <form class="form-container" action="/thought/addThought" method="POST">
+      <form class="form-container" enctype="multipart/form-data" action="/thought/addThought" method="POST">
         <label class="input-label" for="topic">Topic</label>
         <input type="text" name="topic" placeholder="Topic" id="topic" required>
         <label class="input-label" for="bodyText">Thought</label>
         <textarea name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+        <label for="imgUpload" class="form-label">Image</label>
+        <input type="file" id="imageUpload" name="file">
         <!-- <section class="tag-container">
           <span>Tags</span>
           <span id="addButton"></span>

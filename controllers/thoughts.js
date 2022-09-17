@@ -1,3 +1,4 @@
+const cloudinary = require("../middleware/cloudinary");
 const Thought = require('../models/Thought')
 
 module.exports = {
@@ -11,15 +12,26 @@ module.exports = {
     },
     createThought: async (req,res)=>{
         try{
-            res.render('individualthought.ejs')
+            res.render('createthought.ejs')
         }catch(err){
             console.log(err)
         }
     },
     addThought: async (req, res)=>{
         try{
-            console.log(req.body)
-            await Thought.create({topic: req.body.topic, bodyText: req.body.bodyText, dateCreated: Date.now(), tagList: req.body.tagList, createdBy: req.user.id})
+            // Upload image to cloudinary
+            const result = await cloudinary.uploader.upload(req.file.path);
+
+            await Thought.create({
+              topic: req.body.topic, 
+              bodyText: req.body.bodyText,
+              imageURL: result.secure_URL,
+              cloudinaryId: result.public_id,
+              dateCreated: Date.now(),
+              tagList: req.body.tagList,
+              createdBy: req.user.id,
+            })
+
             console.log('Thought has been added!')
             res.redirect('/mythoughts')
         }catch(err){
