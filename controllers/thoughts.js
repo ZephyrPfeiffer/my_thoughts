@@ -53,9 +53,13 @@ module.exports = {
         }
     },
     deleteThought: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
         try{
-            await Thought.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            const thought = await Thought.findById({_id:req.params.thoughtId})
+
+            await cloudinary.uploader.destroy(thought.cloudinaryId);
+
+            await Thought.remove({_id: req.params.id})
+
             console.log('Deleted Thought')
             res.json('Deleted Thought')
         }catch(err){
