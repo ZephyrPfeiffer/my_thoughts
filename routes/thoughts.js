@@ -12,6 +12,6 @@ router.post('/addThought', ensureAuth, upload.single("file"), thoughtController.
 
 router.put('/updateThought', ensureAuth, thoughtController.udpateThought)
 
-router.delete('/deleteThought', ensureAuth, thoughtController.deleteThought)
+router.delete('/deleteThought/:id', ensureAuth, thoughtController.deleteThought)
 
 module.exports = router

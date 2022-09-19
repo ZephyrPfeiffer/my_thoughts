@@ -17,6 +17,9 @@
       <h2><%= thought.topic %></h2>
       <img src="<%= thought.image %>" alt="">
       <p><%= thought.bodyText %></p>
+      <form action="/thought/deleteThought/<%= thought.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
     </main>
 
     <script src="js/main.js"></script>
