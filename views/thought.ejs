@@ -5,23 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyThoughts</title>
-    <link rel="stylesheet" href="css/thought.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/thought.css">
+    <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
     <header>
         <h1>MyThoughts</h1>
         <a href="/logout">Logout</a>
     </header>
-    <main class="one-thought-container">
-      <span><%= thought.dateCreated %></span>
-      <h2><%= thought.topic %></h2>
-      <img src="<%= thought.image %>" alt="">
-      <p><%= thought.bodyText %></p>
+    <main id="originalPost" class="container">
+        <section class="inner-container">
+            <span><%= thought.dateCreated %></span>
+            <span id="editButton" class="edit-button">Edit</span>
+            <h2 id="originalTopic"><%= thought.topic %></h2>
+            <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+            <p id="originalText" class="description"><%= thought.bodyText %></p>
+            <form action="/thought/deleteThought/<%= thought.id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        </section>
+    </main>
+
+    <section id="editForm" class="hide">
+      <form class="form-container" enctype="multipart/form-data" action="/thought/addThought?_method=PUT" method="POST">
+        <label class="input-label" for="topic">Topic</label>
+        <input type="text" name="topic" placeholder="Topic" id="topic" required>
+        <label class="input-label" for="bodyText">Thought</label>
+        <textarea name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+        <label for="imgUpload" class="form-label">Image</label>
+        <input type="file" id="imageUpload" name="file">
+        <button class="submit-button" type="submit">Update</button>
+      </form>
       <form action="/thought/deleteThought/<%= thought.id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
       </form>
-    </main>
+    </section>
 
-    <script src="js/main.js"></script>
+    <script src="/js/editpost.js"></script>
 </body>
 </html>

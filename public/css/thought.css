@@ -38,13 +38,9 @@ li {
 /* LAYOUT
 /*******************************************/
 
-.one-thought-container {
+.thought-image {
 
-  width: 70%;
-  margin: auto;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  object-fit: contain;
 
 }
 
