@@ -47,21 +47,28 @@ module.exports = {
     },
     udpateThought: async (req, res)=>{
         try{
+            // delete current image that is on the post
+            await cloudinary.uploader.destroy(thought.cloudinaryId);
+
+            // upload the new post to cloudinary
+            const result = await cloudinary.uploader.upload(req.file.path);
+
             await Thought.findOneAndUpdate({_id:req.params.id},{
-                subject: req.body.subject,
-                thoughtText: req.body.thoughtText,
+                topic: req.body.topic,
+                bodyText: req.body.bodyText,
+                image: result.secure_url,
+                cloudinaryId: result.public_id,
+                tagList: req.body.tagList,
             })
             console.log('Thought Updated')
-            res.json('Thought Updated')
+            res.redirect(`/thought/${req.params.id}`)
         }catch(err){
             console.log(err)
         }
     },
     deleteThought: async (req, res)=>{
-        try{
-            console.log('hello');
+        try{          
             const thought = await Thought.findById({_id:req.params.id})
-
 
             await cloudinary.uploader.destroy(thought.cloudinaryId);
 
