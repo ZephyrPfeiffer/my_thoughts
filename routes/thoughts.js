@@ -6,9 +6,9 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/createThought', ensureAuth, thoughtController.createThought)
 
-router.get('/:id', ensureAuth, thoughtController.getThought)
-
 router.post('/addThought', ensureAuth, upload.single("file"), thoughtController.addThought)
+
+router.get('/:id', ensureAuth, thoughtController.getThought)
 
 router.put('/updateThought/:id', ensureAuth, thoughtController.udpateThought)
 
