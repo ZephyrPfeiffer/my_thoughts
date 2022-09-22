@@ -47,7 +47,7 @@ module.exports = {
     },
     udpateThought: async (req, res)=>{
         try{
-            await Thought.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+            await Thought.findOneAndUpdate({_id:req.params.id},{
                 subject: req.body.subject,
                 thoughtText: req.body.thoughtText,
             })

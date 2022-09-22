@@ -1,5 +1,5 @@
 // set up base page layouts
-// add ability to edit posts
+// add ability to update post on back end
 // give ability to add tags to a post when creating one (later)
 
 const express = require('express')

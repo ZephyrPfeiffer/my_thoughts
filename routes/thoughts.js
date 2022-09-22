@@ -10,7 +10,7 @@ router.get('/:id', ensureAuth, thoughtController.getThought)
 
 router.post('/addThought', ensureAuth, upload.single("file"), thoughtController.addThought)
 
-router.put('/updateThought', ensureAuth, thoughtController.udpateThought)
+router.put('/updateThought/:id', ensureAuth, thoughtController.udpateThought)
 
 router.delete('/deleteThought/:id', ensureAuth, thoughtController.deleteThought)
 
