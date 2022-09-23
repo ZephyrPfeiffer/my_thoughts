@@ -11,11 +11,11 @@ const ThoughtSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    required: false,
   },
   cloudinaryId: {
     type: String,
-    required: true,
+    required: false,
   },
   dateCreated: {
     type: String,

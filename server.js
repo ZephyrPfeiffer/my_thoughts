@@ -1,4 +1,5 @@
 // set up base page layouts
+// make it to where users can only see post they are authorized to look at
 // add ability to update post on back end
 // give ability to add tags to a post when creating one (later)
 
