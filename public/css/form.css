@@ -11,19 +11,3 @@
   justify-content: space-between;
 
 }
-
-.input {
-  width: 100%;
-}
-
-.input-label {
-
-  width: 100%;
-  margin: 2rem 0;
-
-}
-
-textarea {
-  margin-bottom: 2rem;
-  height: 300px;
-}
