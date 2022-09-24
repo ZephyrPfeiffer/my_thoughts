@@ -1,0 +1,6 @@
+.hero-content.lg\:flex-row-reverse {
+
+  flex-direction: column;
+  width: 100%;
+
+}

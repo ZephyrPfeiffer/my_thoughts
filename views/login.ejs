@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/form.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="/css/login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <% if (locals.messages.errors) { %>
@@ -20,7 +20,7 @@
           <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %>    
   <% } %>
-  <main class="container">
+  <!-- <main class="container">
     <h1 class="container-heading">Login</h1>
     <form class="form-container" action="/login" method="POST">
       <label class="input-label">
@@ -33,6 +33,37 @@
       </label>
         <input type="submit">
     </form>
-  </main>
+  </main> -->
+
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="text-center lg:text-center">
+        <h1 class="text-5xl font-bold">Login</h1>
+      </div>
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input type="text" placeholder="email" class="input input-bordered" />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="text" placeholder="password" class="input input-bordered" />
+            <label class="label">
+              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+            </label>
+          </div>
+          <div class="form-control mt-6">
+            <button class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
