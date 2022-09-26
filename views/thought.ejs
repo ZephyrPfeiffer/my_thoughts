@@ -5,28 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyThoughts</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/thought.css">
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
-    <header>
-        <h1>MyThoughts</h1>
-        <a href="/logout">Logout</a>
-    </header>
-    <main id="originalPost" class="container">
-        <section class="inner-container">
-            <span><%= thought.dateCreated %></span>
-            <span id="editButton" class="edit-button">Edit</span>
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal p-0">
+        <li><a href="/myThoughts">MyThoughts</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+    <main id="originalPost" class="thought-container">
+        <section class="inner-container"> 
+            <span class="date"><%= thought.dateCreated %></span>
             <h2 id="originalTopic"><%= thought.topic %></h2>
             <% if(thought.image) { %>
-              <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+              <div class="image-container">
+                <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+              </div>
             <% } %>
             <p id="originalText" class="description"><%= thought.bodyText %></p>
+            <form class="button-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+              <button class="delete-button btn btn-accent submit" type="submit">Delete</button>
+            </form>
+            <button id="editButton" class="edit-button btn btn-accent submit">Edit</button>
         </section>
     </main>
 
-    <section id="editForm" class="hide">
+    <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+          <div class="text-center lg:text-center">
+            <h1 class="text-5xl font-bold">Edit Thought</h1>
+          </div>
+          <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Topic</span>
+              </label>
+              <input class="input input-bordered input-info w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Thoughts</span>
+              </label>
+              <textarea class="textarea textarea-info" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Image Upload</span>
+              </label>
+              <input type="file" id="imageUpload" name="file">
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-accent submit" type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- <section id="editForm" class="hide">
       <form class="form-container" enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
         <label class="input-label" for="topic">Topic</label>
         <input type="text" name="topic" placeholder="Topic" id="topic" required>
@@ -36,11 +82,10 @@
         <input type="file" id="imageUpload" name="file">
         <button class="submit-button" type="submit">Update</button>
       </form>
-    </section>
-
-    <form action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete</button>
-    </form>
+      <form action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </section> -->
 
     <script src="/js/editpost.js"></script>
 </body>

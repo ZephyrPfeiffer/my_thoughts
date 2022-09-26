@@ -1,49 +1,59 @@
-/* Box Model Hack */
-* {
-  box-sizing: border-box;
-}
-
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-	clear: both;
-}
-
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-body {
-
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+.hero-content {
+
+  margin: auto;
+
+}
+
+.thought-container {
+
+  width: 40%;
+  margin: auto;
+
+}
+
+.inner-container {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.image-container {
+
+  max-height: 600px;
+  overflow: hidden;
+  
+}
+
 .thought-image {
 
+  width: 100%;
   object-fit: contain;
 
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+.button-container,
+.edit-button {
+
+  display: inline;
+
+}
+
+.edit-button,
+.delete-button {
+
+  width: 25%;
+
+}
+
+.description {
+
+  margin: 2rem 0;
+
+}

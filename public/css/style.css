@@ -33,29 +33,6 @@ li {
   list-style: none;
 }
 
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-
-.container {
-
-  width: 50%;
-  margin: auto;
-
-}
-
-.inner-container {
-
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-}
-
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
