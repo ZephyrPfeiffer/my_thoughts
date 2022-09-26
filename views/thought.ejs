@@ -19,7 +19,9 @@
             <span><%= thought.dateCreated %></span>
             <span id="editButton" class="edit-button">Edit</span>
             <h2 id="originalTopic"><%= thought.topic %></h2>
-            <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+            <% if(thought.image) { %>
+              <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+            <% } %>
             <p id="originalText" class="description"><%= thought.bodyText %></p>
         </section>
     </main>

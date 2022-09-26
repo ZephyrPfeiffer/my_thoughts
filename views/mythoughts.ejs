@@ -16,9 +16,11 @@
         <% thoughts.forEach( el => { %>
           <a class="inner-container" href="/thought/<%= el._id %>">
             <section class="thought-container">
-                <span>Created <%= el.dateCreated %></span>
+                <span><%= el.dateCreated %></span>
                 <h3><%= el.topic %></h3>
-                <img src="<%= el.image %>" alt="picture">
+                <% if(el.image) { %>
+                    <img src="<%= el.image %>" alt="picture">
+                <% } %>
             </section>
           </a>
         <% }) %>

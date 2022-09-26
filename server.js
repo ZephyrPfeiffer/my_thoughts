@@ -1,7 +1,7 @@
 // set up base page layouts
-// make it to where users can only see post they are authorized to look at
-// add ability to update post on back end
+// make it to where users can only see posts they are authorized to look at
 // give ability to add tags to a post when creating one (later)
+// make it to where image only shows up on post if there is a valid image
 
 const express = require('express')
 const app = express()
