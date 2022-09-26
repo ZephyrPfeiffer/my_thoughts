@@ -5,29 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyThoughts</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/mythoughts.css">
 </head>
 <body>
-    <header>
-        <h1>MyThoughts</h1>
-        <a href="/logout">Logout</a>
-    </header>
-    <main class="container">
-        <% thoughts.forEach( el => { %>
-          <a class="inner-container" href="/thought/<%= el._id %>">
-            <section class="thought-container">
-                <span><%= el.dateCreated %></span>
-                <h3><%= el.topic %></h3>
-                <% if(el.image) { %>
-                    <img src="<%= el.image %>" alt="picture">
-                <% } %>
-            </section>
-          </a>
-        <% }) %>
-    </main>
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal p-0">
+        <li><a href="/myThoughts">MyThoughts</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+  <main class="container">
+      <% thoughts.forEach( el => { %>
+        <a class="inner-container" href="/thought/<%= el._id %>">
+          <section class="thought-container">
+              <span><%= el.dateCreated %></span>
+              <h3><%= el.topic %></h3>
+              <% if(el.image) { %>
+                  <img src="<%= el.image %>" alt="picture">
+              <% } %>
+          </section>
+        </a>
+      <% }) %>
+  </main>
 
-    <a href="/thought/createThought">Create</a>
+  <a href="/thought/createThought">Create</a>
 
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
