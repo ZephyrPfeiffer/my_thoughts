@@ -1,6 +1,6 @@
 // set up base page layouts for mythoughts.ejs and thought.ejs
 // make it to where users can only see posts they are authorized to look at
-// give ability to add tags to a post when creating one (later)
+// give ability to add tags to a post when creating one (later!)
 
 const express = require('express')
 const app = express()
