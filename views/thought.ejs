@@ -32,10 +32,12 @@
               </div>
             <% } %>
             <p id="originalText" class="description"><%= thought.bodyText %></p>
-            <form class="button-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-              <button class="delete-button btn btn-accent submit" type="submit">Delete</button>
-            </form>
-            <button id="editButton" class="edit-button btn btn-accent submit">Edit</button>
+        </section>
+        <section class="interaction-container">
+          <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+            <button class="delete-button btn btn-accent" type="submit">Delete</button>
+          </form>
+          <button id="editButton" class="edit-button btn btn-accent">Edit</button>
         </section>
     </main>
 

@@ -15,12 +15,23 @@
 
 }
 
-.inner-container {
+.inner-container,
+.interaction-container {
 
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+}
+
+.interaction-container {
+
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  gap: 0 2rem;
+
 
 }
 
@@ -31,6 +42,14 @@
   
 }
 
+.delete-container,
+.edit-button {
+
+  width: 25%;
+  display: inline-block;
+
+}
+
 .thought-image {
 
   width: 100%;
@@ -38,22 +57,18 @@
 
 }
 
-.button-container,
-.edit-button {
-
-  display: inline;
-
-}
-
-.edit-button,
-.delete-button {
-
-  width: 25%;
-
-}
-
 .description {
 
   margin: 2rem 0;
+
+}
+
+/******************************************
+/* Typography
+/*******************************************/
+
+.edit-button {
+
+  background-color: white;
 
 }
