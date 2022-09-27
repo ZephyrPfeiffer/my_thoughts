@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyThoughts</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/thought.css">
-    <link rel="stylesheet" href="/css/form.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyThoughts</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/thought.css">
+  <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
   <div class="navbar bg-base-100">
@@ -22,73 +25,76 @@
       </ul>
     </div>
   </div>
-    <main id="originalPost" class="thought-container">
-        <section class="inner-container"> 
-            <span class="date"><%= thought.dateCreated %></span>
-            <h2 id="originalTopic"><%= thought.topic %></h2>
-            <% if(thought.image) { %>
-              <div class="image-container">
-                <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
-              </div>
-            <% } %>
-            <p id="originalText" class="description"><%= thought.bodyText %></p>
-        </section>
-        <section class="interaction-container">
-          <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-            <button class="delete-button btn btn-accent" type="submit">Delete</button>
-          </form>
-          <button id="editButton" class="edit-button btn btn-accent">Edit</button>
-        </section>
-    </main>
-
-    <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
-      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <div class="card-body">
-          <div class="text-center lg:text-center">
-            <h1 class="text-5xl font-bold">Edit Thought</h1>
-          </div>
-          <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Topic</span>
-              </label>
-              <input class="input input-bordered input-info w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
-            </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Thoughts</span>
-              </label>
-              <textarea class="textarea textarea-info" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
-            </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Image Upload</span>
-              </label>
-              <input type="file" id="imageUpload" name="file">
-            </div>
-            <div class="form-control mt-6">
-              <button class="btn btn-accent submit" type="submit">Update</button>
-            </div>
-          </form>
+  <main id="originalPost" class="thought-container">
+    <section class="inner-container"> 
+      <span class="date"><%= thought.dateCreated %></span>
+      <h2 id="originalTopic"><%= thought.topic %></h2>
+      <% if(thought.image) { %>
+        <div class="image-container">
+          <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
         </div>
+      <% } %>
+      <p id="originalText" class="description"><%= thought.bodyText %></p>
+    </section>
+    <section class="interaction-container">
+      <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+        <button class="delete-button btn btn-accent" type="submit">Delete</button>
+      </form>
+      <button id="editButton" class="edit-button btn btn-accent">Edit</button>
+    </section>
+  </main>
+
+  <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+        <div class="back-button-container">
+          <button id="backButton" class="back-button btn btn-accent">Back</button>
+        </div>
+        <div class="edit-head text-center lg:text-center">
+          <h1 class="text-5xl font-bold">Edit Thought</h1>
+        </div>
+        <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Topic</span>
+            </label>
+            <input class="input input-bordered input-info w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Thoughts</span>
+            </label>
+            <textarea class="textarea textarea-info" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Image Upload</span>
+            </label>
+            <input type="file" id="imageUpload" name="file">
+          </div>
+          <div class="form-control mt-6">
+            <button class="btn btn-accent submit" type="submit">Update</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <!-- <section id="editForm" class="hide">
-      <form class="form-container" enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
-        <label class="input-label" for="topic">Topic</label>
-        <input type="text" name="topic" placeholder="Topic" id="topic" required>
-        <label class="input-label" for="bodyText">Thought</label>
-        <textarea name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
-        <label for="imageUpload" class="form-label">Image</label>
-        <input type="file" id="imageUpload" name="file">
-        <button class="submit-button" type="submit">Update</button>
-      </form>
-      <form action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-    </section> -->
+  <!-- <section id="editForm" class="hide">
+    <form class="form-container" enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
+      <label class="input-label" for="topic">Topic</label>
+      <input type="text" name="topic" placeholder="Topic" id="topic" required>
+      <label class="input-label" for="bodyText">Thought</label>
+      <textarea name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+      <label for="imageUpload" class="form-label">Image</label>
+      <input type="file" id="imageUpload" name="file">
+      <button class="submit-button" type="submit">Update</button>
+    </form>
+    <form action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  </section> -->
 
-    <script src="/js/editpost.js"></script>
+  <script src="/js/editpost.js"></script>
 </body>
 </html>

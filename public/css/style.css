@@ -42,3 +42,23 @@ li {
   display: none;
 
 }
+
+h1, 
+h2, 
+h3,
+p,
+a,
+button,
+.date {
+  font-size: 2rem !important;
+  font-family: 'Anton', 'san-serif';
+}
+
+p,
+a,
+button {
+
+  font-size: 2rem !important;
+
+}
+

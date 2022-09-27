@@ -1,6 +1,9 @@
 const editButton = document.querySelector('#editButton')
 editButton.addEventListener('click', changePageState)
 
+const backButton = document.querySelector('#backButton')
+backButton.addEventListener('click', changePageState)
+
 // stores both the original post
 const originalPostContainer = document.querySelector('#originalPost')
 

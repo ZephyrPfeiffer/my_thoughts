@@ -7,7 +7,10 @@
     <title>MyThoughts</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/style.css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/mythoughts.css">
 </head>
 <body>
@@ -25,17 +28,21 @@
       <% thoughts.forEach( el => { %>
         <a class="inner-container" href="/thought/<%= el._id %>">
           <section class="thought-container">
-              <span><%= el.dateCreated %></span>
-              <h3><%= el.topic %></h3>
+              <span class="date"><%= el.dateCreated %></span>
+              <h3 class="topic-heading"><%= el.topic %></h3>
               <% if(el.image) { %>
-                  <img src="<%= el.image %>" alt="picture">
+                  <div class="image-container">
+                      <img src="<%= el.image %>" alt="picture">
+                  </div>
               <% } %>
           </section>
         </a>
       <% }) %>
   </main>
 
-  <a href="/thought/createThought">Create</a>
+  <div class="create-button-container">
+    <a href="/thought/createThought" class="btn btn-accent create-button">Create</a>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
