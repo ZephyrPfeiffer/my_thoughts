@@ -37,7 +37,7 @@
 
 .image-container {
 
-  max-height: 500px;
+  max-height: 800px;
   overflow: hidden;
   
 }
@@ -52,6 +52,7 @@
 
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1rem;
 
 }
 

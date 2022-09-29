@@ -5,12 +5,12 @@ module.exports = {
     getThought: async (req,res)=>{
         try{
           const thought = await Thought.findById(req.params.id)
-          res.render('thought.ejs', {thought: thought, user: req.user})
-            // if(req.user.id === thought.createdBy) {
-            //     res.render('thought.ejs', {thought: thought, user: req.user})
-            // }else {
-            //   res.redirect('/mythoughts')
-            // }
+          // res.render('thought.ejs', {thought: thought, user: req.user})
+          if(req.params.id === thought.createdBy) {
+            res.render('thought.ejs', {thought: thought, user: req.user})
+          }else {
+            res.redirect('/mythoughts')
+          }
         }catch(err){
             console.log(err)
         }
