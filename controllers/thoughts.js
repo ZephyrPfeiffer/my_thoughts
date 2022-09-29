@@ -11,7 +11,6 @@ module.exports = {
           if(user._id.equals(thought.createdBy)) {
             res.render('thought.ejs', {thought: thought, user: req.user})
           }else {
-            console.log('hello')
             res.redirect('/mythoughts')
           }
         }catch(err){
