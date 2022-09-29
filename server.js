@@ -1,4 +1,3 @@
-// make it to where users can only see posts they are authorized to look at
 // give ability to add tags to a post when creating one (later!)
 
 const express = require('express')
