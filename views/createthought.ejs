@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/style.css.css">
   <link rel="stylesheet" href="/css/form.css">
   <link rel="stylesheet" href="/css/createthought.css">
+  <link rel="stylesheet" href="/css/taglist.css">
 </head>
 <body>
   <div class="navbar bg-base-100">
@@ -46,13 +47,21 @@
               <textarea class="textarea textarea-info" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
             </div>
             <div class="form-control">
+              <button id="addTagButton" class="add-tag-btn btn btn-accent" type="button">
+                <span>Add Tag</span>
+              </button>
+              <ul id="tagList" class="tag-list">
+
+              </ul>
+            </div>
+            <div class="form-control">
               <label class="label">
                 <span class="label-text">Image Upload</span>
               </label>
               <input type="file" id="imageUpload" name="file">
             </div>
             <div class="form-control mt-6">
-              <button type="submit" class="btn btn-accent submit">Create</button>
+              <button type="submit" class="btn btn-accent">Create</button>
             </div>
           </form>
         </div>
@@ -60,6 +69,6 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="/js/addtag.js"></script>
 </body>
 </html>

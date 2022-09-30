@@ -1,15 +1,22 @@
-const addTagButton = document.querySelector('#addButton')
-const tagList = document.querySelector('#tagList')
+const addTagButton = document.querySelector('#addTagButton');
+const tagList = document.querySelector('#tagList');
 
-addTagButton.addEventListener('click', addTagInput)
+addTagButton.addEventListener('click', addTagInput);
 
-// adds a new tag input to the tag list in form
 function addTagInput() {
 
-  // creates new list item and input
-  const tagItem = document.createElement('li')
-  const input = document.createElement('input')
-  tagItem.className = 'tag-item';
+  // creates list item and input for new tag 
+  const tagItem = document.createElement('li');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.name = 'tags[]';
+  input.placeholder = 'Tag';
+  input.classList.add('input-bordered');
+  input.classList.add('input-info');
+  tagItem.classList.add('tag-item');
+
+  tagItem.appendChild(input);
+  tagList.appendChild(tagItem);
 
 }
 

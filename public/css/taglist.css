@@ -1,0 +1,36 @@
+.add-tag-btn {
+
+  width: 20%;
+  height: 100%;
+  margin-top: 2rem;
+
+
+}
+
+.tag-list {
+
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: flex;
+  flex-wrap: wrap;
+  gap: 2rem 0;
+  margin: 2rem 0;
+  border: 2px solid #3abff8;
+  border-radius: 10px;
+
+}
+
+.tag-item {
+
+  display: inline-block;
+  width: 20%;
+  padding: 1rem;
+
+}
+
+.tag-item input {
+
+  width: 90%;
+
+}
