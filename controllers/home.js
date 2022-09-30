@@ -2,7 +2,7 @@ const Thought = require('../models/Thought')
 
 module.exports = {
     getIndex: (req,res)=>{
-        res.render('index.ejs')
+      res.render('index.ejs')
     },
     getThoughts: async (req,res)=>{
       const thoughts = await Thought.find({createdBy:req.user.id})
