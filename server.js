@@ -1,4 +1,4 @@
-// give ability to add tags to a post when creating one (later!)
+// process tag information for a post on back end and store it inside database
 
 const express = require('express')
 const app = express()
