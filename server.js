@@ -1,4 +1,4 @@
-// process tag information for a post on back end and store it inside database
+// make it to where tags display on post when viewing and editing them
 
 const express = require('express')
 const app = express()
