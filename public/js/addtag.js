@@ -8,6 +8,8 @@ function addTagInput() {
   // creates list item and input for new tag 
   const tagItem = document.createElement('li');
   const input = document.createElement('input');
+
+  // initialize attributes and classes for elements created
   input.type = 'text';
   input.name = 'tags[]';
   input.placeholder = 'Tag';
@@ -15,6 +17,7 @@ function addTagInput() {
   input.classList.add('input-info');
   tagItem.classList.add('tag-item');
 
+  // append elements to tagList
   tagItem.appendChild(input);
   tagList.appendChild(tagItem);
 
