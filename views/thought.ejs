@@ -36,10 +36,10 @@
       <% } %>
       <p id="originalText" class="description"><%= thought.bodyText %></p>
       <% if(thought.tagList.length > 0) { %>
-        <ul class="tag-list">
+        <ul id="originalTagList" class="original-tag-list">
           <% for(let i = 0; i < thought.tagList.length; i++) { %>
-            <li class="tag">
-              <span class="tag-text"><%= thought.tagList[i] %></span>
+            <li class="original-tag">
+              <span class="original-tag-text"><%= thought.tagList[i] %></span>
             </li>
           <% } %>
         </ul>
