@@ -35,6 +35,15 @@
         </div>
       <% } %>
       <p id="originalText" class="description"><%= thought.bodyText %></p>
+      <% if(thought.tagList.length > 0) { %>
+        <ul class="tag-list">
+          <% for(let i = 0; i < thought.tagList.length; i++) { %>
+            <li class="tag">
+              <span class="tag-text"><%= thought.tagList[i] %></span>
+            </li>
+          <% } %>
+        </ul>
+      <% } %>
     </section>
     <section class="interaction-container">
       <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">

@@ -1,4 +1,5 @@
 // make it to where tags display on post when viewing and editing them
+// also make it to where you can delete tags
 
 const express = require('express')
 const app = express()
