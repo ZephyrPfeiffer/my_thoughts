@@ -73,19 +73,16 @@ module.exports = {
   udpateThought: async (req, res)=>{
         
     const validTags = validateTags(req.body.tags);
-
-    try {
-      // find thought to update
-      const thought = await Thought.findById({_id:req.params.id})
-
-      // delete current image that is on the post if it exists
-      await cloudinary.uploader.destroy(thought.cloudinaryId);
-    }catch(err) {
-      console.log(err)
-    }
       
     try{
       if(req.file) {
+
+        // find thought to update
+        const thought = await Thought.findById({_id:req.params.id})
+
+        // delete current image that is on the post if it exists
+        await cloudinary.uploader.destroy(thought.cloudinaryId);
+
         // upload the new post to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
 
@@ -100,8 +97,6 @@ module.exports = {
         await Thought.findOneAndUpdate({_id:req.params.id},{
           topic: req.body.topic,
           bodyText: req.body.bodyText,
-          image: null,
-          cloudinaryId: null,
           tagList: validTags,
         })
       }
