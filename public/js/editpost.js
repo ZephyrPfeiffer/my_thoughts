@@ -21,6 +21,8 @@ const editText = document.querySelector('#bodyText')
 const editTagList = document.querySelector('#tagList')
 const editImage = document.querySelector('#imageUpload')
 
+tagList.addEventListener('click', deleteTag);
+
 // variable to keep track of state that page is in
 let state = 'read';
 
@@ -62,6 +64,10 @@ function populateTagSection(tags) {
     // creates list item and input for new tag 
     const tagItem = document.createElement('li');
     const input = document.createElement('input');
+    const deleteButton = document.createElement('button')
+
+    // add a delete event to button created
+    deleteButton.addEventListener('click', deleteTag)
 
     // initialize attributes and classes for elements created
     input.type = 'text';
@@ -70,13 +76,23 @@ function populateTagSection(tags) {
     input.placeholder = 'Tag';
     input.classList.add('input-bordered');
     input.classList.add('input-info');
+    deleteButton.classList.add('delete-tag-button');
+    deleteButton.innerText = 'X';
     tagItem.classList.add('tag-item');
-  
+
+
     // append elements to tagList
     tagItem.appendChild(input);
+    tagItem.appendChild(deleteButton);
     editTagList.appendChild(tagItem);
     
     }
+
+}
+
+function deleteTag(e) {
+
+  e.target.parentElement.remove();
 
 }
 

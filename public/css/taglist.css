@@ -22,7 +22,8 @@
 
 .tag-item {
 
-  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
   width: 20%;
   padding: 1rem;
 
@@ -31,5 +32,12 @@
 .tag-item input {
 
   width: 90%;
+
+}
+
+.delete-tag-button {
+
+  width: 50%;
+  height: 100%;
 
 }
