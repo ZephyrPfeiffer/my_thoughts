@@ -1,4 +1,4 @@
-// make it to where you can delete tags
+// make it to where deleting a tag does not delete tag section
 
 const express = require('express')
 const app = express()
