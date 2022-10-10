@@ -16,3 +16,32 @@
 .alert {
   margin-bottom: 20px;
 }
+
+/******************************************
+/* Typography
+/*******************************************/
+
+.heading {
+
+  color: white;
+
+}
+
+.card {
+
+  background-color: #6f8ead;
+
+}
+
+.background {
+
+  background: url('/img/homestarysky.jpg');
+  background-size: 100%;
+
+}
+
+.label-text {
+
+  color: white;
+
+}
