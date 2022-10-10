@@ -10,10 +10,6 @@ function addTagInput() {
   const input = document.createElement('input');
   const deleteButton = document.createElement('button');
 
-  // add a delete event to button created
-  deleteButton.addEventListener('click', deleteTag)
-
-
   // initialize attributes and classes for elements created
   input.type = 'text';
   input.name = 'tags[]';
@@ -28,12 +24,5 @@ function addTagInput() {
   tagItem.appendChild(input);
   tagItem.appendChild(deleteButton);
   tagList.appendChild(tagItem);
-
-}
-
-function deleteTag(e) {
-
-  e.target.parentElement.remove();
-  e.target.remove();
 
 }

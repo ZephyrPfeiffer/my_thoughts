@@ -4,6 +4,9 @@ editButton.addEventListener('click', changePageState)
 const backButton = document.querySelector('#backButton')
 backButton.addEventListener('click', changePageState)
 
+const addTagButton = document.querySelector('#addTagButton');
+addTagButton.addEventListener('click', addTagInput);
+
 // stores both the original post
 const originalPostContainer = document.querySelector('#originalPost')
 
@@ -16,12 +19,11 @@ const originalText = document.querySelector('#originalText')
 const originalTags = document.querySelectorAll('.original-tag-text')
 const originalImage = document.querySelector('#originalImage')
 
+// edit post elements
 const editTopic = document.querySelector('#topic')
 const editText = document.querySelector('#bodyText')
 const editTagList = document.querySelector('#tagList')
 const editImage = document.querySelector('#imageUpload')
-
-tagList.addEventListener('click', deleteTag);
 
 // variable to keep track of state that page is in
 let state = 'read';
@@ -61,13 +63,13 @@ function populateTagSection(tags) {
 
   for(let i = 0; i < tags.length; i++) {
 
+    editTagList.innerHTML = '';
+
     // creates list item and input for new tag 
     const tagItem = document.createElement('li');
     const input = document.createElement('input');
-    const deleteButton = document.createElement('button')
-
-    // add a delete event to button created
-    deleteButton.addEventListener('click', deleteTag)
+    const deleteButton = document.createElement('button');
+    deleteButton.addEventListener('click', deleteTag);
 
     // initialize attributes and classes for elements created
     input.type = 'text';
@@ -90,9 +92,34 @@ function populateTagSection(tags) {
 
 }
 
+function addTagInput() {
+
+  // creates list item and input for new tag 
+  const tagItem = document.createElement('li');
+  const input = document.createElement('input');
+  const deleteButton = document.createElement('button');
+  deleteButton.addEventListener('click', deleteTag);
+
+  // initialize attributes and classes for elements created
+  input.type = 'text';
+  input.name = 'tags[]';
+  input.placeholder = 'Tag';
+  input.classList.add('input-bordered');
+  input.classList.add('input-info');
+  tagItem.classList.add('tag-item');
+  deleteButton.innerText = 'X';
+  deleteButton.classList.add('delete-tag-button');
+
+  // append elements to tagList
+  tagItem.appendChild(input);
+  tagItem.appendChild(deleteButton);
+  editTagList.appendChild(tagItem);
+
+}
+
 function deleteTag(e) {
 
-  e.target.parentElement.remove();
+  e.target.parentNode.remove();
 
 }
 
