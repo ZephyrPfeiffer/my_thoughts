@@ -1,4 +1,4 @@
-// make it to where deleting a tag does not delete tag section
+// style all pages to make them look astetically pleasing
 
 const express = require('express')
 const app = express()
