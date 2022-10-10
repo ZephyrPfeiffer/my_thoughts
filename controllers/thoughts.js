@@ -25,14 +25,15 @@ module.exports = {
     }
   },
   addThought: async (req, res)=>{
-      
     try{
 
-      console.log(req.body.tags);
+      let validTags = [];
 
-      const validTags = validateTags(req.body.tags);
+      if(req.body.tags) {
 
-      console.log(validTags);
+        validTags = validateTags(req.body.tags);
+
+      }
 
       if(req.file !== undefined) {
         // Upload image to cloudinary
@@ -72,7 +73,13 @@ module.exports = {
   },
   udpateThought: async (req, res)=>{
         
-    const validTags = validateTags(req.body.tags);
+    let validTags = [];
+
+      if(req.body.tags) {
+
+        validTags = validateTags(req.body.tags);
+
+      }
       
     try{
       if(req.file) {
