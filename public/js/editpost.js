@@ -61,9 +61,9 @@ function changePageState() {
 
 function populateTagSection(tags) {
 
-  for(let i = 0; i < tags.length; i++) {
+  editTagList.innerHTML = '';
 
-    editTagList.innerHTML = '';
+  for(let i = 0; i < tags.length; i++) {
 
     // creates list item and input for new tag 
     const tagItem = document.createElement('li');
