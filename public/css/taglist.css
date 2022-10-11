@@ -9,14 +9,14 @@
 .tag-list {
 
   width: 100%;
-  min-height: 100px;
+  min-height: 60px;
   display: flex;
   justify-content: flex;
   flex-wrap: wrap;
   gap: 2rem 0;
   margin: 2rem 0;
-  border: 2px solid #3abff8;
   border-radius: 10px;
+  background-color: #3c4e5f;;
 
 }
 
@@ -29,15 +29,26 @@
 
 }
 
-.tag-item input {
+.list-input {
 
   width: 90%;
+  height: 100%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 10px 0 0 10px;
+  color: white;
 
 }
 
 .delete-tag-button {
 
-  width: 50%;
+  width: 30%;
   height: 100%;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0 10px 10px 0;
+  color: white;
 
 }

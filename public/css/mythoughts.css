@@ -73,10 +73,10 @@
 
 .background {
 
-  height: 100vh;
   background: url('/img/mythoughtsbackground.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  height: 100vh;
   
 }
 

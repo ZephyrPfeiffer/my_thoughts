@@ -15,11 +15,11 @@ function addTagInput() {
   input.type = 'text';
   input.name = 'tags[]';
   input.placeholder = 'Tag';
-  input.classList.add('input-bordered');
-  input.classList.add('input-info');
+  input.classList.add('list-input');
   tagItem.classList.add('tag-item');
   deleteButton.innerText = 'X';
   deleteButton.classList.add('delete-tag-button');
+  deleteButton.classList.add('btn');
 
   // append elements to tagList
   tagItem.appendChild(input);

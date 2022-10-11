@@ -52,6 +52,7 @@ button,
 .date {
   font-size: 2rem !important;
   font-family: 'Anton', 'san-serif';
+  color: white;
 }
 
 p,
@@ -61,4 +62,3 @@ button {
   font-size: 1.5rem !important;
 
 }
-
