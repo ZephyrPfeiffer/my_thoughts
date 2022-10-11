@@ -27,16 +27,11 @@
       </ul>
     </div>
   </div>
-  <main id="originalPost" class="thought-container">
-    <section class="inner-container"> 
+  <div class="thought-container card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title"><%= thought.topic %></h2>
       <span class="date"><%= thought.dateCreated %></span>
-      <h2 id="originalTopic"><%= thought.topic %></h2>
-      <% if(thought.image) { %>
-        <div class="image-container">
-          <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
-        </div>
-      <% } %>
-      <p id="originalText" class="description"><%= thought.bodyText %></p>
+      <p><%= thought.bodyText %></p>
       <% if(thought.tagList.length > 0) { %>
         <ul id="originalTagList" class="original-tag-list">
           <% for(let i = 0; i < thought.tagList.length; i++) { %>
@@ -46,14 +41,18 @@
           <% } %>
         </ul>
       <% } %>
-    </section>
-    <section class="interaction-container">
-      <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-        <button class="delete-button btn btn-accent" type="submit">Delete</button>
-      </form>
-      <button id="editButton" class="edit-button btn btn-accent">Edit</button>
-    </section>
-  </main>
+      <% if(thought.image) { %>
+        <div class="image-container">
+          <figure><img id="originalImage" class="thought-image" src="<%= thought.image %>" alt=""></figure>
+        </div>
+      <% } %>
+  </div>
+  <section class="interaction-container">
+    <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+      <button class="delete-button btn btn-accent" type="submit">Delete</button>
+    </form>
+    <button id="editButton" class="edit-button btn btn-accent">Edit</button>
+  </section>
 
   <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
