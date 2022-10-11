@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/mythoughts.css">
 </head>
-<body>
+<body class="background">
   <div class="navbar bg-base-100">
     <div class="flex-1">
     </div>
@@ -25,19 +25,19 @@
     </div>
   </div>
   <main class="container">
-      <% thoughts.forEach( el => { %>
-        <a class="inner-container" href="/thought/<%= el._id %>">
-          <section class="thought-container">
-              <span class="date"><%= el.dateCreated %></span>
-              <h3 class="topic-heading"><%= el.topic %></h3>
-              <% if(el.image) { %>
-                  <div class="image-container">
-                      <img src="<%= el.image %>" alt="picture">
-                  </div>
-              <% } %>
-          </section>
-        </a>
-      <% }) %>
+    <% thoughts.forEach( el => { %>
+      <a class="inner-container" href="/thought/<%= el._id %>">
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <% if(el.image) { %>
+            <figure><img src="<%= el.image %>" alt="" /></figure>
+          <% } %>
+          <div class="card-body">
+            <h2 class="card-title"><%= el.topic %></h2>
+            <p><%= el.dateCreated %></p>
+          </div>
+        </div>
+      </a>
+    <% }) %>
   </main>
 
   <div class="create-button-container">
