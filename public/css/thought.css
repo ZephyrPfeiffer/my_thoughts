@@ -56,13 +56,14 @@
 .image-container {
 
   max-height: 500px;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
   
 }
 
 .thought-image {
 
+  object-fit: contain;
   width: 100%;
 
 }
