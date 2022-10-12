@@ -32,8 +32,8 @@
             <figure><img src="<%= el.image %>" alt="" /></figure>
           <% } %>
           <div class="card-body">
-            <h2 class="card-title"><%= el.topic %></h2>
-            <p><%= el.dateCreated %></p>
+            <h2 class="card-title heading"><%= el.topic %></h2>
+            <p class="text-content"><%= el.dateCreated %></p>
           </div>
         </div>
       </a>
@@ -41,7 +41,7 @@
   </main>
 
   <div class="create-button-container">
-    <a href="/thought/createThought" class="btn btn-accent create-button">Create</a>
+    <a href="/thought/createThought" class="btn create-button">Create</a>
   </div>
 
   <script src="js/main.js"></script>

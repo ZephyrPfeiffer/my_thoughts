@@ -31,6 +31,8 @@ let state = 'read';
 // will transform post into either read or edit state based on what state the post is currently in
 function changePageState() {
 
+  console.log(state);
+
   if(state === 'read') {
 
     state = 'edit'
@@ -76,8 +78,7 @@ function populateTagSection(tags) {
     input.value = tags[i].innerText;
     input.name = 'tags[]';
     input.placeholder = 'Tag';
-    input.classList.add('input-bordered');
-    input.classList.add('input-info');
+    input.classList.add('list-input');
     deleteButton.classList.add('delete-tag-button');
     deleteButton.innerText = 'X';
     tagItem.classList.add('tag-item');

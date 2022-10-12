@@ -12,11 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/thought.css">
-  <link rel="stylesheet" href="/css/form.css">
   <link rel="stylesheet" href="/css/taglist.css">
 
 </head>
-<body>
+<body class="background">
   <div class="navbar bg-base-100">
     <div class="flex-1">
     </div>
@@ -27,11 +26,11 @@
       </ul>
     </div>
   </div>
-  <div class="thought-container card w-96 bg-base-100 shadow-xl">
+  <div id="originalPost" class="thought-container card w-96 bg-base-100 shadow-xl">
     <div class="card-body">
-      <h2 class="card-title"><%= thought.topic %></h2>
+      <h2 id="originalTopic" class="card-title heading"><%= thought.topic %></h2>
       <span class="date"><%= thought.dateCreated %></span>
-      <p><%= thought.bodyText %></p>
+      <p id="originalText" class="text-content"><%= thought.bodyText %></p>
       <% if(thought.tagList.length > 0) { %>
         <ul id="originalTagList" class="original-tag-list">
           <% for(let i = 0; i < thought.tagList.length; i++) { %>
@@ -43,22 +42,22 @@
       <% } %>
       <% if(thought.image) { %>
         <div class="image-container">
-          <figure><img id="originalImage" class="thought-image" src="<%= thought.image %>" alt=""></figure>
+          <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
         </div>
       <% } %>
+      <section class="interaction-container">
+        <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
+          <button class="delete-button btn" type="submit">Delete</button>
+        </form>
+        <button id="editButton" class="edit-button btn">Edit</button>
+      </section>
+    </div>
   </div>
-  <section class="interaction-container">
-    <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
-      <button class="delete-button btn btn-accent" type="submit">Delete</button>
-    </form>
-    <button id="editButton" class="edit-button btn btn-accent">Edit</button>
-  </section>
-
   <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
         <div class="back-button-container">
-          <button id="backButton" class="back-button btn btn-accent">Back</button>
+          <button id="backButton" class="back-button btn">Back</button>
         </div>
         <div class="edit-head text-center lg:text-center">
           <h1 class="text-5xl font-bold">Edit Thought</h1>
@@ -68,30 +67,31 @@
             <label class="label">
               <span class="label-text">Topic</span>
             </label>
-            <input class="input input-bordered input-info w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+            <input class="input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
           </div>
           <div class="form-control">
             <label class="label">
               <span class="label-text">Thoughts</span>
             </label>
-            <textarea class="textarea textarea-info" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+            <textarea class="textarea" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
           </div>
           <div class="form-control">
-            <button id="addTagButton" class="add-tag-btn btn btn-accent" type="button">
+            <button id="addTagButton" class="add-tag-btn btn" type="button">
               <span>Add Tag</span>
             </button>
             <ul id="tagList" class="tag-list">
 
             </ul>
           </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Image Upload</span>
+          <div class="form-control file-input">
+            <label class="custom-file-upload btn-ghost">
+              <input type="file" id="imageUpload" name="file">
+              Image Upload
             </label>
             <input type="file" id="imageUpload" name="file">
           </div>
           <div class="form-control mt-6">
-            <button class="btn btn-accent submit" type="submit">Update</button>
+            <button class="btn submit" type="submit">Update</button>
           </div>
         </form>
       </div>

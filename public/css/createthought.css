@@ -21,6 +21,7 @@
 .textarea {
 
   min-height: 250px;
+  resize: none;
 
 }
 
@@ -50,13 +51,5 @@
 input[type="file"] {
 
   display: none;
-
-}
-
-.input,
-.textarea {
-
-  background-color: #3c4e5f;
-  color: white;
 
 }

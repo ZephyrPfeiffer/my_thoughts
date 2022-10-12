@@ -21,16 +21,18 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
-
-}
-
 ul {
   padding: 0;
 }
 
 li {
   list-style: none;
+}
+
+.navbar {
+
+  background-color: #6f8ead;
+
 }
 
 /******************************************
@@ -43,22 +45,11 @@ li {
 
 }
 
-h1, 
-h2, 
-h3,
-p,
-a,
-button,
-.date {
-  font-size: 2rem !important;
-  font-family: 'Anton', 'san-serif';
+.input,
+.textarea {
+
+  background-color: #3c4e5f;
   color: white;
-}
-
-p,
-a,
-button {
-
-  font-size: 1.5rem !important;
 
 }
+
