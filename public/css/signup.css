@@ -37,6 +37,8 @@
 
   background: url('/img/homestarysky.jpg');
   background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
 
 }
 
