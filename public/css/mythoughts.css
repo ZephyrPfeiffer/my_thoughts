@@ -5,7 +5,8 @@
 .container {
 
   width: 70%;
-  margin: 3rem auto 3rem auto;
+  padding: 3rem 0 3rem 0;
+  margin: auto;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -17,6 +18,22 @@
 
   max-height: 370px;
   overflow: hidden;
+
+}
+
+.first-post-button-container {
+
+  width: auto;
+  margin: auto;
+  text-align: center;
+
+}
+
+.place-items-center {
+
+  border-radius: 10px;
+  background-color: #6f8ead;
+  color: white;
 
 }
 
@@ -34,21 +51,34 @@
 
 }
 
+.first-post-button {
+
+  margin-top: 1rem;
+
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
 .background {
 
-  background: url('/img/mythoughtsbackground.jpg');
+  background: #4e647a;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   
 }
 
 .card-body {
 
   background-color: #6f8ead;
+
+}
+
+.page-heading {
+
+  font-size: 3rem;
+  color: white;
 
 }

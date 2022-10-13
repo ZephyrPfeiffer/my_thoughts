@@ -132,6 +132,10 @@
   cursor: pointer;
 }
 
+.custom-file-upload input {
+  color: white;
+}
+
 .file-input {
 
   display: inline-block;
