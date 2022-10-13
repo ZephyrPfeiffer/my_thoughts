@@ -27,9 +27,9 @@
   <main class="container">
     <% thoughts.forEach( el => { %>
       <a class="inner-container" href="/thought/<%= el._id %>">
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="image-container card w-96 bg-base-100 shadow-xl">
           <% if(el.image) { %>
-            <figure><img src="<%= el.image %>" alt="" /></figure>
+            <img class="thought-image" src="<%= el.image %>" alt="" />
           <% } %>
           <div class="card-body">
             <h2 class="card-title heading"><%= el.topic %></h2>
