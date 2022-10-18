@@ -1,4 +1,5 @@
 // add media queries to make all pages look good on mobile and tablets
+// fix thought post not being same height on mythoughts page
 
 const express = require('express')
 const app = express()

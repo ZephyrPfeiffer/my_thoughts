@@ -2,21 +2,28 @@
 /* LAYOUT
 /*******************************************/
 
-.container {
+.thoughts-container {
 
   width: 70%;
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0 7rem 0;
   margin: auto;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 10rem;
+  gap: 5.5rem;
+
+}
+
+.thought-post-container {
+
+  min-height: 450px;
 
 }
 
 .thought-image {
 
-  max-height: 370px;
+  min-height: 350px;
+  max-height: 350px;
   overflow: hidden;
 
 }
@@ -79,5 +86,54 @@
 
   font-size: 3rem;
   color: white;
+
+}
+
+/******************************************
+/* Media Queries
+/*******************************************/
+
+@media(max-width: 1897px) {
+
+  .thoughts-container {
+
+    width: 65%;
+    justify-content: space-between;
+
+  }
+
+}
+
+@media(max-width: 1330px) {
+
+  .thoughts-container {
+
+    width: 70%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem 0;
+
+  }
+
+  .inner-container {
+
+    height: 100%;
+
+  }
+
+}
+
+@media(max-width: 480px) {
+
+  .thoughts-container {
+
+    width: 80%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem 0;
+
+  }
 
 }
