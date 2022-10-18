@@ -63,9 +63,8 @@
 
 .background {
 
-  background: #4e647a;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: url('/img/mythoughtsbackground.jpg') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   
 }

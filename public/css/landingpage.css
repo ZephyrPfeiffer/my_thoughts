@@ -10,3 +10,14 @@
   color: #6f8ead;
 
 }
+
+@media (max-width: 1023px) {
+
+  p.ml-16,
+  dd.ml-16 {
+
+    margin: 0;
+
+  }
+
+}

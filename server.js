@@ -1,4 +1,4 @@
-// comments
+// add media queries to make all pages look good on mobile and tablets
 
 const express = require('express')
 const app = express()
