@@ -27,10 +27,8 @@
 
 .background {
 
-  background: url('/img/createthoughtbackground.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background: url('/img/createthoughtbackground.jpg') no-repeat center center fixed;
+  background-size: cover;
   
 }
 
@@ -51,5 +49,25 @@
 input[type="file"] {
 
   display: none;
+
+}
+
+@media (max-width: 1300px) {
+
+  .hero-content {
+
+    width: 80%;
+
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .hero-content {
+
+    width: 90%;
+
+  }
 
 }
