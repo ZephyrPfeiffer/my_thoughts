@@ -147,3 +147,23 @@ input[type="file"] {
   display: none;
 
 }
+
+@media (max-width: 1300px) {
+
+  .hero-content {
+
+    width: 80%;
+
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .hero-content {
+
+    width: 90%;
+
+  }
+
+}
