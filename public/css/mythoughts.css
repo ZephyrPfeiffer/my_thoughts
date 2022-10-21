@@ -72,7 +72,6 @@
 
   background: url('/img/mythoughtsbackground.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
   
 }
 
@@ -128,7 +127,7 @@
 
   .thoughts-container {
 
-    width: 80%;
+    width: 100%;
     margin: auto;
     flex-direction: column;
     align-items: center;

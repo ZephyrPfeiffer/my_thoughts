@@ -11,7 +11,7 @@
 
 .card-body {
 
-  display: block;
+  padding-bottom: 3rem;
 
 }
 
@@ -103,10 +103,8 @@
 
 .background {
 
-  background: url('/img/thoughtbackground.jpg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 100vh;
+  background: url('/img/thoughtbackground.jpg') no-repeat center center fixed;
+  background-size: cover;
   
 }
 
