@@ -7,7 +7,7 @@
 ![mythoughtslandpage](https://user-images.githubusercontent.com/73978386/197251922-5785a00b-b2ae-45f0-b73b-0a1550ab9565.png)
 ![](/public/img/mythoughtslandingpage.png)
 
-<h2>How It's Made:</h2>!
+<h2>How It's Made:</h2>
 
 <hr>
  
