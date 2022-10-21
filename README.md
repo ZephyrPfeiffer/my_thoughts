@@ -6,7 +6,7 @@
 
 ![](/public/img/mythoughtslandingpage.png)
 
-<h2>How It's Made:</h2>![Uploading mythoughtslandpage.png…]()
+<h2>How It's Made:</h2>!
 
 
 <hr>
