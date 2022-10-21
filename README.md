@@ -1,8 +1,8 @@
-#MyThoughts
+﻿# MyThoughts
  
 <h1>Express yourself by posting about your day to day experiences.</h2>
 
-<span>Link to project: ![mythoughtslandpage](https://user-images.githubusercontent.com/73978386/197249843-80e00055-86a3-4055-80a6-f0e4643099d6.png)</span>
+<span>Link to project: https://mythoughts.onrender.com/</span>
 
 ![](/public/img/mythoughtslandingpage.png)
 
