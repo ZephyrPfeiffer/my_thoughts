@@ -1,6 +1,6 @@
 #MyThoughts
  
-<h1>Post about your day to day experiences to take care of your mental health.</h2>
+<h1>Express your self by posting about your day to day experiences.</h2>
 
 <span>Link to project: https://animal-crossing-tunes-production.up.railway.app/</span>
 
