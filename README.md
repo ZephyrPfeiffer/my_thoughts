@@ -4,7 +4,7 @@
 
 <span>Link to project: https://mythoughts.onrender.com/</span>
 
-![](img/animalcrossingshowcase.png)
+![](img/mythoughtslandingpage.png)
 
 <h2>How It's Made:</h2>
 
