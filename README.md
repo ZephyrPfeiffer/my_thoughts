@@ -2,7 +2,7 @@
  
 <h1>Express yourself by posting about your day to day experiences.</h2>
 
-<span>Link to project: https://animal-crossing-tunes-production.up.railway.app/</span>
+<span>Link to project: https://mythoughts.onrender.com/</span>
 
 ![](img/animalcrossingshowcase.png)
 
