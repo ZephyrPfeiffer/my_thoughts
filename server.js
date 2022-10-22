@@ -1,4 +1,4 @@
-// add media queries to make all pages look good on mobile and tablet
+// fix mobile layout of post display on thought.ejs
 
 const express = require('express')
 const app = express()
