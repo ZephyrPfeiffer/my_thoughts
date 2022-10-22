@@ -11,7 +11,7 @@
 
 <hr>
  
-<h3>Tech Used: HTML, CSS, Javascript, Express, Node, EJS, Mongodb, Mongoose, Passport, and cloudinary</h3>
+<h3>Tech Used: HTML, CSS, Javascript, Express, Node, EJS, Mongodb, Mongoose, Passport, and Cloudinary</h3>
 
 <p>Before building this web application, I created mockups for the general layout of the website and figured what type of information I would be storing in the database. Afterwards, I implemented authentication so that each user would only have access to their personal dashboards. Once that was done, I created and implemented the key features that would allow the web application to function properly. Once the key features were working, I created more defined layouts for all webpages and created a theme for all webpages to revolve around. Lastly, I implemented media queries to ensure that the web application was responsive.</p>
 
