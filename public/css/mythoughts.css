@@ -127,11 +127,18 @@
 
   .thoughts-container {
 
-    width: 95%;
+    width: 90%;
     margin: auto;
     flex-direction: column;
     align-items: center;
     gap: 5rem 0;
+
+  }
+
+  .thought-post-container,
+  .inner-container.card {
+
+    width: 100%;
 
   }
 

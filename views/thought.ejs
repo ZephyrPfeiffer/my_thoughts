@@ -42,7 +42,7 @@
         </ul>
       <% } %>
       <% if(thought.image) { %>
-          <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
+        <img id="originalImage" class="thought-image" src="<%= thought.image %>" alt="">
       <% } %>
       <section class="interaction-container">
         <form class="delete-container" action="/thought/deleteThought/<%= thought._id %>?_method=DELETE" method="POST">
