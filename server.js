@@ -1,4 +1,4 @@
-// fix mobile layout of post display on thought.ejs
+// fix mobile layout of post display on thought page
 
 const express = require('express')
 const app = express()
