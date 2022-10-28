@@ -9,6 +9,12 @@
 
 }
 
+.card-body {
+
+  padding-bottom: 1rem;
+
+}
+
 .card.max-w-sm {
 
   max-width: 100%;
@@ -52,6 +58,7 @@
 
   border-radius: 10px;
   width: 55%;
+  max-height: 500px;
   margin: auto;
 
 }
