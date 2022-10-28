@@ -18,7 +18,7 @@
 .card,
 .thought-container.card {
 
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto auto auto;
   width: 50%;
   background-color: #6f8ead;
 
@@ -96,7 +96,7 @@
 
   background: url('/img/thoughtbackground.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 90vh;
+  min-height: 100vh;
   
 }
 
