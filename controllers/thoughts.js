@@ -31,7 +31,7 @@ module.exports = {
 
       if(req.body.tags) {
 
-        validTags = validateTags(req.body.tags);
+        validTags = processTags(req.body.tags)
 
       }
 
@@ -77,7 +77,7 @@ module.exports = {
 
       if(req.body.tags) {
 
-        validTags = validateTags(req.body.tags);
+        validTags = processTags(req.body.tags);
 
       }
       
@@ -139,9 +139,9 @@ module.exports = {
 
 }
 
-function validateTags(tags) {
+function processTags(tags) {
 
-  return tags.filter(tag => {
+  let validTags = tags.filter(tag => {
 
     if(tag !== '') {
 
@@ -152,5 +152,25 @@ function validateTags(tags) {
     return false;
 
   })
+
+  let processedTags = validTags.map(tag => {
+
+    let processedTag = '';
+
+    for(let i = 0; i < tag.length; i++) {
+
+      if(tag[i] !== '#') {
+
+        processedTag += tag[i];
+
+      }
+
+    }
+
+    return processedTag;
+
+  })
+
+  return processedTags;
 
 }
