@@ -1,5 +1,3 @@
-// fix mobile layout of post display on thought page
-
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -32,8 +30,8 @@ app.use(methodOverride("_method"));
 // Sessions
 app.use(
     session({
-      secret: 'keyboard cat',
-      resave: false,
+      secret: process.env.secret,
+      resave: true,
       saveUninitialized: false,
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
