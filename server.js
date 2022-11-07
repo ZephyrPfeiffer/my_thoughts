@@ -30,7 +30,7 @@ app.use(methodOverride("_method"));
 // Sessions
 app.use(
     session({
-      secret: 'waterBottle214',
+      secret: 'keyboard cat',
       resave: true,
       saveUninitialized: false,
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
