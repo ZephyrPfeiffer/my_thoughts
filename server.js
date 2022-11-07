@@ -30,7 +30,7 @@ app.use(methodOverride("_method"));
 // Sessions
 app.use(
     session({
-      secret: process.env.secret,
+      secret: 'waterBottle214',
       resave: true,
       saveUninitialized: false,
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
