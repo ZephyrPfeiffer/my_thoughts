@@ -21,6 +21,7 @@
 
 }
 
+
 .card,
 .thought-container.card {
 
@@ -174,6 +175,12 @@ input[type="file"] {
 
     width: 100%;
   
+  }
+
+  .topic-input.max-w-xs {
+
+    max-width: 100%;
+
   }
 
 
