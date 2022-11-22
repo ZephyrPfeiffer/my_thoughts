@@ -14,7 +14,7 @@ module.exports = {
         res.redirect('/mythoughts')
       }
     }catch(err){
-      console.log(err)
+      
     }
   },
   createThought: async (req,res)=>{
@@ -25,17 +25,20 @@ module.exports = {
     }
   },
   addThought: async (req, res)=>{
+
     try{
 
+      // array to hold set of tags from request
       let validTags = [];
 
+      // process tags from request if there are any
       if(req.body.tags) {
 
         validTags = processTags(req.body.tags)
 
       }
 
-      if(req.file !== undefined) {
+      if(req.file && !req.fileValidationError) {
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
 
@@ -64,25 +67,17 @@ module.exports = {
           createdBy: req.user.id,
         })
       }
-        console.log('Thought has been added!')
         res.redirect('/mythoughts')
     }catch(err){
-      console.log(err)
       res.redirect('/mythoughts')
     }
   },
-  udpateThought: async (req, res)=>{
-        
+  updateThought: async (req, res)=>{
+
     let validTags = [];
-
-      if(req.body.tags) {
-
-        validTags = processTags(req.body.tags);
-
-      }
       
     try{
-      if(req.file) {
+      if(req.file && !req.fileValidationError) {
 
         // find thought to update
         const thought = await Thought.findById({_id:req.params.id})
@@ -110,7 +105,6 @@ module.exports = {
       console.log('Thought Updated')
       res.redirect(`/thought/${req.params.id}`)
       }catch(err){
-       console.log(err)
         res.redirect(`/thought/${req.params.id}`)
       }
   },
@@ -123,16 +117,13 @@ module.exports = {
       // delete current image that is on the post
       await cloudinary.uploader.destroy(thought.cloudinaryId);
     }catch(err) {
-      console.log(err)
+
     }
       
     try{         
       await Thought.remove({_id: req.params.id})
-
-      console.log('Deleted Thought');
       res.redirect("/mythoughts");
     }catch(err){
-      console.log(err);
       res.redirect("/mythoughts");
     }
   },

@@ -38,10 +38,15 @@
           <div class="inner-container card w-96 bg-base-100 shadow-xl">
             <% if(el.image) { %>
               <img class="thought-image" src="<%= el.image %>" alt="" />
+            <% } else { %>
+              <img class="thought-image" src="/img/filler-image.jpg" alt="" />
             <% } %>
             <div class="description-container card-body">
               <h2 class="card-title heading"><%= el.topic %></h2>
               <p class="text-content"><%= el.dateCreated %></p>
+              <% if(!el.image) { %>
+                <p><%= el.bodyText %></p>
+              <% } %>
             </div>
           </div>
         </a>
@@ -53,7 +58,7 @@
     <div class="create-button-container">
       <a href="/thought/createThought" class="btn create-button">Create</a>
     </div>
-    <% } %>
+  <% } %>
 
   <script src="js/main.js"></script>
 </body>
