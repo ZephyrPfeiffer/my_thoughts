@@ -30,9 +30,9 @@
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
           <% if (locals.messages.errors) { %>
-            <% messages.errors.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
-            <% }) %>    
+            <% for(let i = 0; i < messages.errors.length; i++) { %>
+                <div class="alert alert-danger"><%= messages.errors[i].msg %></div>
+            <% } %>    
           <% } %>
           <form action="/signup" method="POST">
             <div class="form-control">
