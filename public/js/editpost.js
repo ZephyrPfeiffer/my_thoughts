@@ -17,7 +17,6 @@ const editForm = document.querySelector('#editForm')
 const originalTopic = document.querySelector('#originalTopic')
 const originalText = document.querySelector('#originalText')
 const originalTags = document.querySelectorAll('.original-tag-text')
-const originalImage = document.querySelector('#originalImage')
 
 // edit post elements
 const editTopic = document.querySelector('#topic')

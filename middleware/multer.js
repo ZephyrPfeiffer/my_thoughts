@@ -6,7 +6,7 @@ module.exports = multer({
   fileFilter: (req, file, cb) => {
     let ext = path.extname(file.originalname);
     if (ext !== ".jpg" && ext !== ".jpeg" && ext !== ".png" && ext !== ".jfif") {
-      req.fileValidationError = "Forbidden extension";
+      req.fileValidationError = "Forbidden Extension";
       return cb(null, false, req.fileValidationError);
     }
     cb(null, true);

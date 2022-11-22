@@ -38,31 +38,31 @@ module.exports = {
 
       }
 
-      if(req.file && !req.fileValidationError) {
+      if(req.file && req.fileValidationError !== "Forbidden Extension") {
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
 
-        const today = new Date();
+        const now = new Date();
 
         await Thought.create({
           topic: req.body.topic, 
           bodyText: req.body.bodyText,
           image: result.secure_url,
           cloudinaryId: result.public_id,
-          dateCreated: today.getDate()  + "-" + (today.getMonth()+1) + "-" + today.getFullYear(),
+          dateCreated: now.toDateString(),
           tagList: validTags,
           createdBy: req.user.id,
         })
       }else {
 
-        const today = new Date();
+        const now = new Date();
 
         await Thought.create({
           topic: req.body.topic, 
           bodyText: req.body.bodyText,
           image: null,
           cloudinaryId: null,
-          dateCreated: today.getDate()  + "-" + (today.getMonth()+1) + "-" + today.getFullYear(),
+          dateCreated: now.toDateString(),
           tagList: validTags,
           createdBy: req.user.id,
         })
@@ -75,15 +75,25 @@ module.exports = {
   updateThought: async (req, res)=>{
 
     let validTags = [];
+
+    // process tags from request if there are any
+    if(req.body.tags) {
+
+      validTags = processTags(req.body.tags)
+
+    }
       
     try{
-      if(req.file && !req.fileValidationError) {
+      if(req.file && req.fileValidationError !== "Forbidden Extension") {
 
         // find thought to update
         const thought = await Thought.findById({_id:req.params.id})
 
         // delete current image that is on the post if it exists
-        await cloudinary.uploader.destroy(thought.cloudinaryId);
+        if(thought.cloudinaryId !== null) {
+          await cloudinary.uploader.destroy(thought.cloudinaryId);
+        }
+        
 
         // upload the new post to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
@@ -95,6 +105,8 @@ module.exports = {
           cloudinaryId: result.public_id,
           tagList: validTags,
         })
+
+
       }else {
         await Thought.findOneAndUpdate({_id:req.params.id},{
           topic: req.body.topic,
