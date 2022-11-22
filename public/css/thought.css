@@ -30,15 +30,8 @@
 
 }
 
-.text-content {
-
-  max-height: 300px;
-
-}
-
 .textarea {
 
-  min-height: 150px;
   resize: none;
 
 }
@@ -166,12 +159,13 @@ input[type="file"] {
   .thought-container.card {
 
     width: 85%;
+    min-height: 500px;
 
   }
 
   .hero-content {
 
-    width: 85%;
+    width: 95%;
     min-height: 800px;
 
   }
@@ -180,12 +174,6 @@ input[type="file"] {
 
     width: 100%;
   
-  }
-
-  .text-content {
-
-    flex-grow: 0;
-
   }
 
 
