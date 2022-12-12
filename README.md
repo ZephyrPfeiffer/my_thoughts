@@ -25,6 +25,6 @@
 
 <hr>
 
-<p>While building this application, I learned about the importance of planning all the information that would be needed for the web application to function properly. Information such as what data will be stored in the database gave me a more clear idea of how the web application should be stuructured and where the data should be used in the application. I also learned more about the importance of unit testing and how it can greatly reduce the amount of bugs that occur within a web application.</p>
+<p>While building this application, I learned about the importance of planning all the information that would be needed for the web application to function properly. Information such as what data would be stored in the database gave me a more clear idea of how the web application should be stuructured and where the data should be used in the application. I also learned more about the importance of unit testing and how it can greatly reduce the amount of bugs that occur within a web application.</p>
 
 
