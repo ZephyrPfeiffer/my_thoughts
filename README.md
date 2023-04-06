@@ -5,6 +5,7 @@
 <span>Link to project: https://mythoughts.cyclic.app/</span>
 
 <h3 align="left">MyThoughts Demo</h3>
+
 ![MyThoughts Demo](https://user-images.githubusercontent.com/73978386/230243032-c6ecba5f-e37d-4ef7-82aa-c304839436a6.gif)
 
 <h2>How It's Made:</h2>
