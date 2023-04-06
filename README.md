@@ -2,7 +2,7 @@
  
 <h1>Express yourself by posting about your day to day experiences.</h2>
 
-<span>Link to project: https://mythoughts.onrender.com/</span>
+<span>Link to project: https://mythoughts.cyclic.app/</span>
 
 ![mythoughtslandpage](https://user-images.githubusercontent.com/73978386/197251922-5785a00b-b2ae-45f0-b73b-0a1550ab9565.png)
 ![](/public/img/mythoughtslandingpage.png)
