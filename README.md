@@ -4,8 +4,8 @@
 
 <span>Link to project: https://mythoughts.cyclic.app/</span>
 
-![mythoughtslandpage](https://user-images.githubusercontent.com/73978386/197251922-5785a00b-b2ae-45f0-b73b-0a1550ab9565.png)
-![](/public/img/mythoughtslandingpage.png)
+<h3 align="left">MyThoughts Demo</h3>
+![MyThoughts Demo](/mythoughtsdemo.gif)
 
 <h2>How It's Made:</h2>
 
