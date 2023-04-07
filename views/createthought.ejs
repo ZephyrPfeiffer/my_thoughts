@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/css/output.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/css/createthought.css" type="text/css">
   <link rel="stylesheet" href="/css/taglist.css" type="text/css">
 
@@ -19,14 +19,12 @@
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
-  <div class="navbar bg-gray-200">
+  <div class="navbar">
     <div class="flex-1">
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal p-0">
-        <li><a href="/myThoughts">MyThoughts</a></li>
-        <li><a href="/logout">Log out</a></li>
-      </ul>
+      <a href="/myThoughts" class="btn btn-ghost normal-case text-xl">MyThoughts</a></li>
+      <a href="/logout" class="btn btn-ghost normal-case text-xl">Log out</a></li>
     </div>
   </div>
   <div class="hero background min-h-screen bg-base-200">
@@ -57,17 +55,13 @@
 
               </ul>
             </div>
-            <div class="form-control file-input">
+            <div class="form-control">
               <% if (locals.messages.errors) { %>
                 <% for(let i = 0; i < messages.errors.length; i++) { %>
                     <div class="alert alert-danger"><%= messages.errors[i].msg %></div>
                 <% } %>    
               <% } %>
-              <label class="custom-file-upload btn-ghost">
-                <input type="file" id="imageUpload" name="file">
-                Image Upload
-              </label>
-              <input type="file" id="imageUpload" name="file">
+              <input type="file" class="file-input w-full max-w-xs" name="file"/>
             </div>
             <div class="form-control mt-6">
               <button type="submit" class="btn">Create</button>
@@ -81,3 +75,9 @@
   <script src="/js/createpost.js"></script>
 </body>
 </html>
+
+<!-- <label class="custom-file-upload btn">
+  <input type="file" id="imageUpload" name="file">
+  Image Upload
+</label>
+<input type="file" id="imageUpload" name="file"> -->

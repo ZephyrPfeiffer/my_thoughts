@@ -4,7 +4,7 @@
 
 .hero-content {
 
-  width: 50%;
+  width: 100%;
   margin: auto;
 
 }
@@ -28,6 +28,12 @@
   margin: 2rem auto auto auto;
   width: 50%;
   background-color: #6f8ead;
+
+}
+
+.card {
+
+  width: 85%;
 
 }
 
@@ -111,7 +117,7 @@
 
 }
 
-.custom-file-upload {
+/* .custom-file-upload {
   border: 1px solid;
   border-radius: 10px;
   display: inline-block;
@@ -133,13 +139,17 @@ input[type="file"] {
 
   display: none;
 
-}
+} */
 
 /******************************************
 /* Media Queries
 /*******************************************/
 
 @media (max-width: 1500px) {
+
+  .card {
+    width: 85%;
+  }
 
   .thought-container.card {
 
@@ -149,7 +159,7 @@ input[type="file"] {
 
   .hero-content {
 
-    width: 80%;
+    width: 100%;
 
   }
 
@@ -157,7 +167,7 @@ input[type="file"] {
 
 @media (max-width: 500px) {
 
-  .thought-container.card {
+  .thought-container {
 
     width: 85%;
     min-height: 500px;

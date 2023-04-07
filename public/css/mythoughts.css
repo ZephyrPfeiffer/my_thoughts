@@ -17,6 +17,8 @@
 .thought-post-container {
 
   min-height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
 
 }
 

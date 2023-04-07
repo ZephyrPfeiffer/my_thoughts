@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@400;500;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/css/output.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/css/thought.css" type="text/css">
   <link rel="stylesheet" href="/css/taglist.css" type="text/css">
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -20,16 +20,16 @@
 </head>
 
 <body class="background">
-  <div class="navbar bg-gray-200">
+  <div class="navbar">
     <div class="flex-1">
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal p-0">
-        <li><a href="/myThoughts">MyThoughts</a></li>
-        <li><a href="/logout">Log out</a></li>
-      </ul>
+      <a href="/myThoughts" class="btn btn-ghost normal-case text-xl">MyThoughts</a></li>
+      <a href="/logout" class="btn btn-ghost normal-case text-xl">Log out</a></li>
     </div>
   </div>
+
+  <!--Original Post-->
   <div id="originalPost" class="thought-container card w-96 bg-base-100 shadow-xl">
     <div class="card-body">
       <h2 id="originalTopic" class="card-title heading"><%= thought.topic %></h2>
@@ -57,47 +57,51 @@
       </section>
     </div>
   </div>
-  <div id="editForm" class="hide hero-content flex-col lg:flex-row-reverse">
-    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
-        <div class="back-button-container">
-          <button id="backButton" class="back-button btn">Back</button>
-        </div>
-        <div class="edit-head text-center lg:text-center">
-          <h1 class="text-5xl font-bold">Edit Thought</h1>
-        </div>
-        <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Topic</span>
-            </label>
-            <input class="input topic-input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Thoughts</span>
-            </label>
-            <textarea class="textarea" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
-          </div>
-          <div class="form-control">
-            <button id="addTagButton" class="add-tag-btn btn" type="button">
-              <span>Add Tag</span>
-            </button>
-            <ul id="tagList" class="tag-list">
 
-            </ul>
+  <div id="editForm" class="hero hide">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+          <div class="back-button-container">
+            <button id="backButton" class="back-button btn">Back</button>
           </div>
-          <div class="form-control file-input">
-            <label class="custom-file-upload btn-ghost">
-              <input type="file" id="imageUpload" name="file">
-              Image Upload
-            </label>
-            <input type="file" id="imageUpload" name="file">
+          <div class="edit-head text-center lg:text-center">
+            <h3 class="text-5xl font-bold">Edit Thought</h1>
           </div>
-          <div class="form-control mt-6">
-            <button class="btn submit" type="submit">Update</button>
-          </div>
-        </form>
+          <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Topic</span>
+              </label>
+              <input class="input topic-input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Thoughts</span>
+              </label>
+              <textarea class="textarea" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+            </div>
+            <div class="form-control">
+              <button id="addTagButton" class="add-tag-btn btn" type="button">
+                <span>Add Tag</span>
+              </button>
+              <ul id="tagList" class="tag-list">
+
+              </ul>
+            </div>
+            <div class="form-control">
+              <% if (locals.messages.errors) { %>
+                <% for(let i = 0; i < messages.errors.length; i++) { %>
+                    <div class="alert alert-danger"><%= messages.errors[i].msg %></div>
+                <% } %>    
+              <% } %>
+              <input type="file" class="file-input w-full max-w-xs" name="file"/>
+            </div>
+            <div class="form-control mt-6">
+              <button type="submit" class="btn">Create</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
