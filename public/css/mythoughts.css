@@ -30,16 +30,30 @@
 
 .thought-image {
 
-  min-height: 350px;
-  max-height: 350px;
+  height: 350px;
   overflow: hidden;
+
+}
+
+.first-post-container {
+
+  width: 40%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+.first-post-description {
+
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem auto;
 
 }
 
 .first-post-button-container {
 
-  width: auto;
-  margin: auto;
   text-align: center;
 
 }
@@ -110,6 +124,10 @@
 
   }
 
+  .first-post-container {
+    width: 50%;
+  }
+
 }
 
 @media(max-width: 1333px) {
@@ -124,9 +142,17 @@
 
   }
 
+  .first-post-container {
+
+    width: 70%;
+
+  }
+
   .inner-container {
 
     height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
 
   }
 

@@ -27,11 +27,14 @@
   </div>
   <main class="thoughts-container">
     <% if(thoughts.length <= 0) { %>
-      <div class="first-post-button-container">
-          <h2 class="page-heading">Make your first Post!</h2>
-          <a href="/thought/createThought" class="btn first-post-button create-button">Create Post</a>
+      <div class="first-post-container card w-96 bg-base-100 shadow-xl">
+        <img class="thought-image" src="/img/filler-image.jpg" alt="" />
+        <div class="description-container card-body">
+          <h2 class="first-post-description card-title heading">Make your first post!</h2>
+          <a href="/thought/createThought" class="btn create-button">Create Post</a>
+        </div>
       </div>
-    <% } else { %>
+        <% } else { %>
       <% thoughts.forEach( el => { %>
         <a class="thought-post-container" href="/thought/<%= el._id %>">
           <div class="inner-container card w-96 bg-base-100 shadow-xl">
