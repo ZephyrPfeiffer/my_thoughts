@@ -170,6 +170,18 @@
 
   }
 
+  .first-post-container {
+
+    width: 90%;
+
+  }
+
+  .create-button {
+
+    font-size: 1.5rem;
+
+  }
+
   .thought-post-container,
   .inner-container.card {
 
