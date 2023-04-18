@@ -101,8 +101,8 @@
 
 .background {
 
-  background: url('/img/thoughtbackground.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #3d4f60;
+  width: 100%;
   min-height: 100vh;
   
 }
