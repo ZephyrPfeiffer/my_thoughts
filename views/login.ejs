@@ -34,7 +34,7 @@
                 <div class="alert alert-danger"><%= messages.errors[i].msg %></div>
             <% } %>    
           <% } %>
-          <form action="/login" method="POST">
+          <form action="/login" method="POST" onsubmit="disableButton()">
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Email</span>
@@ -48,7 +48,7 @@
               <input type="password" placeholder="password" name="password" class="input input-bordered" />
             </div>
             <div class="form-control mt-6">
-              <button type="submit" class="btn">Login</button>
+              <button id="submit-button" type="submit" class="btn">Login</button>
             </div>
           </form>
         </div>
@@ -56,5 +56,6 @@
     </div>
   </div>
 
+  <script src="js/submit.js"></script>
 </body>
 </html>
