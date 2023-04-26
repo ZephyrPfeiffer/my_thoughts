@@ -1,5 +1,5 @@
-// return user to same page there were on if they upload a image file that is not supported and notify them.
-// give user ability to delete image that is being held in the image upload area when creating or update a post.
+// return user to same page there were on if they upload a image file that is not supported and notify them
+// give user ability to delete image that is being held in the image upload area when creating or update a post
 
 const express = require('express')
 const app = express()
