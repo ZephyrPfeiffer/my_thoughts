@@ -43,14 +43,12 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
+
+connectDB()
   
 app.use('/', mainRoutes)
 app.use('/thought', thoughtRoutes)
  
-connectDB().then(() => {
-  
-  app.listen(process.env.PORT, ()=> {
-    console.log('Server is running, you better catch it!')
-  })
-
+app.listen(process.env.PORT, ()=> {
+  console.log('Server is running, you better catch it!')
 })
