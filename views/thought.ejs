@@ -70,16 +70,12 @@
           </div>
           <form enctype="multipart/form-data" action="/thought/updateThought/<%= thought._id %>?_method=PUT" method="POST">
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Topic</span>
-              </label>
-              <input class="input topic-input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+              <label for="topic" class="label">Topic</label>
+              <input id="topic" class="input topic-input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" required>
             </div>
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Thoughts</span>
-              </label>
-              <textarea class="textarea" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+              <label for="bodyText" class="label">Thoughts</label>
+              <textarea id="bodyText" class="textarea" name="bodyText" placeholder="Your thoughts" required></textarea>
             </div>
             <div class="form-control">
               <button id="addTagButton" class="add-tag-btn btn" type="button">

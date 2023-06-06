@@ -3,8 +3,6 @@
   width: 50%;
 
 }
- 
-
 
 .card.max-w-sm {
 
@@ -22,6 +20,7 @@
 
   min-height: 250px;
   resize: none;
+  font-size: 1.3rem;
 
 }
 
@@ -33,25 +32,20 @@
   
 }
 
-/* .custom-file-upload {
-  border: 1px solid;
-  border-radius: 10px;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
+/* Typography */
 
-.file-input {
+.label {
 
-  display: inline-block;
+  font-size: 1.5rem;
 
 }
 
-input[type="file"] {
+.topic-input,
+.list-input {
 
-  display: none;
+  font-size: 1.3rem;
 
-} */
+}
 
 @media (max-width: 1300px) {
 

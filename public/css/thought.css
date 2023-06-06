@@ -12,6 +12,7 @@
 .card-body {
 
   padding-bottom: 1rem;
+  gap: .5rem;
 
 }
 
@@ -39,7 +40,9 @@
 
 .textarea {
 
+  min-height: 250px;
   resize: none;
+  font-size: 1.3rem;
 
 }
 
@@ -111,11 +114,50 @@
 /* Typography
 /*******************************************/
 
+.heading {
+
+  font-size: 3rem;
+
+}
+
+.date {
+
+  font-size: 1.5rem;
+
+}
+
+.text-content {
+
+  font-size: 1.5rem;
+
+}
+
+.original-tag-text {
+
+  font-size: 2rem;
+
+}
+
 .edit-button {
 
   background-color: #6f8ead;
 
 }
+
+.label {
+
+  font-size: 1.5rem;
+
+}
+
+.topic-input,
+.list-input {
+
+  font-size: 1.3rem;
+
+}
+
+
 
 /* .custom-file-upload {
   border: 1px solid;

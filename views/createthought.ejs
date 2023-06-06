@@ -36,16 +36,12 @@
           </div>
           <form enctype="multipart/form-data" action="/thought/addThought" method="POST">
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Topic</span>
-              </label>
-              <input class="input topic-input input-bordered w-full max-w-xs" type="text" name="topic" placeholder="Topic" id="topic" required>
+              <label for="Topic" class="label">Topic</label>
+              <input id="Topic" type="text" class="input topic-input input-bordered w-full max-w-xs" name="topic" placeholder="Topic" required>
             </div>
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Thoughts</span>
-              </label>
-              <textarea class="textarea" name="bodyText" placeholder="Your thoughts" id="bodyText" required></textarea>
+              <label for="bodyText" class="label">Thoughts</label>
+              <textarea id="bodyText" class="textarea" name="bodyText" placeholder="Your thoughts" required></textarea>
             </div>
             <div class="form-control">
               <button id="addTagButton" class="add-tag-btn btn" type="button">
@@ -61,7 +57,9 @@
                     <div class="alert alert-danger"><%= messages.errors[i].msg %></div>
                 <% } %>    
               <% } %>
-              <input type="file" class="file-input w-full max-w-xs" name="file"/>
+              <label class="label">
+                <input type="file" class="file-input w-full max-w-xs" name="file"/>
+              </label>
             </div>
             <div class="form-control mt-6">
               <button type="submit" class="btn">Create</button>
