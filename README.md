@@ -2,7 +2,7 @@
  
 <h1>Express yourself by posting about your day to day experiences.</h2>
 
-<span>Link to project: https://mythoughts.cyclic.app/</span>
+<span>Link to project: https://mythoughts.up.railway.app/</span>
 
 <h3 align="left">MyThoughts Demo</h3>
 
